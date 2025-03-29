@@ -6,9 +6,9 @@ class AppColorTheme {
   AppColorTheme._();
 
   // Default application colors (light theme)
-  static const Color primaryLight = Color(0xFF2196F3); // Blue
+  static const Color primaryLight = Color(0xFFEFE0D5); // Blue
   static const Color primaryVariantLight = Color(0xFF1976D2); // Dark Blue
-  static const Color secondaryLight = Color(0xFFFF9800); // Orange
+  static const Color secondaryLight = Color.fromARGB(255, 222, 209, 189); // Orange
   static const Color secondaryVariantLight = Color(0xFFF57C00); // Dark Orange
   static const Color backgroundLight = Color(0xFFF5F5F5); // Almost White
   static const Color surfaceLight = Colors.white;

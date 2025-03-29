@@ -1,13 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:myeg_test/provider/product_provider.dart';
 import 'package:myeg_test/routes/route.dart';
 import 'package:myeg_test/services/navigation_service.dart';
+import 'package:myeg_test/services/service_locator.dart';
 import 'package:myeg_test/services/theme_service.dart';
 import 'package:provider/provider.dart';
 
 void main() {
+  ServiceLocator().setupRepositories();
   runApp(
-    ChangeNotifierProvider(
-      create: (context) => ThemeService(),
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => ThemeService(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => ProductProvider(),
+        ),
+      ],
       child: const MyApp(),
     ),
   );
