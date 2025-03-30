@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:myeg_test/extensions/text_style_extension.dart';
+import 'package:myeg_test/theme/color_theme.dart';
 
 class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
-  final String title;
+  final String? title;
   final List<Widget>? actions;
   final bool centerTitle;
   final Widget? leading;
@@ -11,11 +12,11 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   const CommonAppBar({
     Key? key,
-    required this.title,
+    this.title,
     this.actions,
     this.centerTitle = true,
     this.leading,
-    this.backgroundColor = Colors.blue,
+    this.backgroundColor = AppColorTheme.primaryLight,
     this.elevation = 4.0,
   }) : super(key: key);
 
@@ -23,7 +24,7 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       title: Text(
-        title,
+        title ?? '',
         style: context.titleL,
       ),
       centerTitle: centerTitle,

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:myeg_test/model/product_model.dart';
+import 'package:myeg_test/screens/card_detail_screen.dart';
 import 'package:myeg_test/screens/home_screen.dart';
 import 'package:myeg_test/screens/splash_screen.dart';
 
@@ -24,6 +26,12 @@ class AppRoutes {
       case home:
         return MaterialPageRoute(
           builder: (_) => const HomeScreen(),
+          settings: settings,
+        );
+
+      case details:
+        return MaterialPageRoute(
+          builder: (_) => CardDetailScreen(productModel: settings.arguments as ProductModel),
           settings: settings,
         );
 
