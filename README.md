@@ -1,10 +1,6 @@
 # 📱 Flutter E-commerce App
 
-<p align="center">
-  <img src="assets/app_icon.png" alt="App Icon" width="120" height="120"/>
-</p>
-
-A modern Flutter e-commerce application that allows users to **browse products**, **search**, **filter by category**, and **manage a shopping cart** with persistence.
+A modern Flutter e-commerce application that allows users to **browse products** and **manage a shopping cart** with persistence.
 
 ---
 
