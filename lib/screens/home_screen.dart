@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:myeg_test/model/product_model.dart';
 import 'package:myeg_test/provider/product_provider.dart';
+import 'package:myeg_test/routes/route.dart';
+import 'package:myeg_test/services/navigation_service.dart';
 import 'package:myeg_test/services/theme_service.dart';
 import 'package:myeg_test/widgets/common_appbar.dart';
 import 'package:myeg_test/widgets/common_product_card.dart';
@@ -58,11 +60,19 @@ class HomeScreen extends StatelessWidget {
                     itemCount: products.length,
                     itemBuilder: (context, index) {
                       var item = products[index];
-                      return CommonProductCard(
-                        imagePath: item.image ?? '',
-                        title: item.title ?? '',
-                        rating: item.rating?.rate ?? 0.0, // Safely access rating
-                        price: item.price ?? 0.0,
+                      return GestureDetector(
+                        onTap: () {
+                          NavigationService().navigateTo(
+                            AppRoutes.details,
+                            arguments: item,
+                          );
+                        },
+                        child: CommonProductCard(
+                          imagePath: item.image ?? '',
+                          title: item.title ?? '',
+                          rating: item.rating?.rate ?? 0.0, // Safely access rating
+                          price: item.price ?? 0.0,
+                        ),
                       );
                     },
                   );
