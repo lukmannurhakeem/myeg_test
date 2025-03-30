@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myeg_test/model/product_model.dart';
 import 'package:myeg_test/screens/card_detail_screen.dart';
+import 'package:myeg_test/screens/cart_screen.dart';
 import 'package:myeg_test/screens/home_screen.dart';
 import 'package:myeg_test/screens/splash_screen.dart';
 
@@ -13,6 +14,7 @@ class AppRoutes {
   static const String profile = '/profile';
   static const String settings = '/settings';
   static const String details = '/details';
+  static const String cart = '/cart';
 
   // Route generator function
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -32,6 +34,12 @@ class AppRoutes {
       case details:
         return MaterialPageRoute(
           builder: (_) => CardDetailScreen(productModel: settings.arguments as ProductModel),
+          settings: settings,
+        );
+
+      case cart:
+        return MaterialPageRoute(
+          builder: (_) => CartScreen(),
           settings: settings,
         );
 
